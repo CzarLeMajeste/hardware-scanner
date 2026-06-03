@@ -1,6 +1,6 @@
 use axum::extract::State;
 use axum::http::{header, HeaderMap, Method, StatusCode};
-use axum::response::IntoResponse;
+use axum::response::{IntoResponse, Response};
 use axum::routing::{get, post};
 use axum::{Json, Router};
 use chrono::{DateTime, Utc};
@@ -142,14 +142,15 @@ async fn create_local_token(
     State(state): State<AppState>,
     headers: HeaderMap,
     Json(payload): Json<ConsentRequest>,
-) -> impl IntoResponse {
+) -> Response {
     if !payload.consent {
         return (
             StatusCode::BAD_REQUEST,
             Json(ErrorResponse {
                 error: "consent must be true for local hardware scanning".to_string(),
             }),
-        );
+        )
+            .into_response();
     }
 
     if !is_origin_allowed(&headers, &state.local_allowed_origins) {
@@ -158,7 +159,8 @@ async fn create_local_token(
             Json(ErrorResponse {
                 error: "origin is not allowed for local scanning".to_string(),
             }),
-        );
+        )
+            .into_response();
     }
 
     let token_value = generate_token();
@@ -179,6 +181,7 @@ async fn create_local_token(
             expires_at: expires_at.to_rfc3339(),
         }),
     )
+        .into_response()
 }
 
 async fn scan_local_machine(State(state): State<AppState>, headers: HeaderMap) -> impl IntoResponse {
