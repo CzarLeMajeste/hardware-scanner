@@ -7,9 +7,6 @@
   --text: #edf1ff;
   --muted: #95a2c9;
   --accent: #5f8dff;
-  --good: #18a76f;
-  --fair: #f0a81e;
-  --low: #dc5f72;
 }
 
 * {
@@ -57,11 +54,39 @@ h3 {
 
 .hero p {
   color: var(--muted);
-  max-width: 60ch;
+}
+
+.controls {
+  margin-top: 16px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.controls label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #bfd0ff;
+  font-size: 0.85rem;
+}
+
+.controls input {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9px;
+  background: rgba(9, 14, 26, 0.95);
+  color: var(--text);
+  padding: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 14px;
 }
 
 button {
-  margin-top: 10px;
   border: none;
   border-radius: 10px;
   padding: 12px 18px;
@@ -69,6 +94,10 @@ button {
   color: white;
   font-weight: 700;
   cursor: pointer;
+}
+
+button.secondary {
+  background: linear-gradient(120deg, #2c8cff, #27b7d6);
 }
 
 button:hover {

@@ -9,12 +9,32 @@
   <body>
     <main class="container">
       <header class="hero">
-        <p class="eyebrow">LIVE MACHINE INSPECTION</p>
+        <p class="eyebrow">HYBRID LOCAL + SERVER SCAN</p>
         <h1>Hardware Scanner</h1>
         <p>
-          Click once to scan this machine and get ranked OS compatibility guidance in real time.
+          Use <strong>Scan my device</strong> for local hardware from Tauri or localhost service,
+          and <strong>Scan server</strong> for backend machine inspection.
         </p>
-        <button id="scan-btn" type="button">Run Live Scan</button>
+
+        <div class="controls">
+          <label>
+            Local scanner URL
+            <input id="local-service-url" value="http://127.0.0.1:7878" />
+          </label>
+          <label>
+            Server scanner URL
+            <input id="server-service-url" placeholder="https://scanner.example.com" />
+          </label>
+          <label>
+            Server API key
+            <input id="server-api-key" type="password" placeholder="x-api-key" />
+          </label>
+        </div>
+
+        <div class="actions">
+          <button id="scan-local-btn" type="button">Scan my device</button>
+          <button id="scan-server-btn" type="button" class="secondary">Scan server</button>
+        </div>
         <p id="status" class="status">Ready.</p>
       </header>
 
