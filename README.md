@@ -4,14 +4,22 @@ Hardware scanner that inspects the current machine and returns the **top 4 OS ma
 
 ## Usage
 
+Rust implementation:
+
 ```bash
-python /tmp/workspace/CzarLeMajeste/hardware-scanner/hardware_scanner.py
+cargo run --release
 ```
 
 Compact output:
 
 ```bash
-python /tmp/workspace/CzarLeMajeste/hardware-scanner/hardware_scanner.py --compact
+cargo run --release -- --compact
+```
+
+Legacy Python implementation (kept for compatibility):
+
+```bash
+python /tmp/workspace/CzarLeMajeste/hardware-scanner/hardware_scanner.py
 ```
 
 ## Output structure
