@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hardware Scanner</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="hero">
+        <p class="eyebrow">LIVE MACHINE INSPECTION</p>
+        <h1>Hardware Scanner</h1>
+        <p>
+          Click once to scan this machine and get ranked OS compatibility guidance in real time.
+        </p>
+        <button id="scan-btn" type="button">Run Live Scan</button>
+        <p id="status" class="status">Ready.</p>
+      </header>
+
+      <section id="hardware" class="panel hidden"></section>
+      <section id="matches" class="matches hidden"></section>
+    </main>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

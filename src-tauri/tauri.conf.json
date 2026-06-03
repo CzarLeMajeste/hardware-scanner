@@ -2,18 +2,16 @@
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "hardware-scanner",
   "version": "0.1.0",
-  "identifier": "com.tauri.dev",
+  "identifier": "com.czarlemajeste.hardware-scanner",
   "build": {
-    "frontendDist": "../ui",
-    "beforeDevCommand": "npm run dev",
-    "beforeBuildCommand": "npm run build"
+    "frontendDist": "../ui"
   },
   "app": {
     "windows": [
       {
         "title": "Hardware Scanner",
-        "width": 800,
-        "height": 600,
+        "width": 1100,
+        "height": 760,
         "resizable": true,
         "fullscreen": false
       }

@@ -2,7 +2,7 @@
 
 Hardware scanner that inspects the current machine and returns the **top 4 OS matches** in JSON, categorized by compatibility score and including detailed hardware improvement guidance for each option.
 
-## Usage
+## CLI usage
 
 Rust implementation:
 
@@ -21,6 +21,28 @@ Legacy Python implementation (kept for compatibility):
 ```bash
 python /tmp/workspace/CzarLeMajeste/hardware-scanner/hardware_scanner.py
 ```
+
+## Tauri web demo
+
+The Tauri app runs a **real local hardware scan** in Rust and displays results in a modern HTML/CSS UI.
+
+### Prerequisites
+
+- Rust toolchain
+- Tauri CLI:
+
+```bash
+cargo install tauri-cli
+```
+
+### Run desktop app
+
+```bash
+cd /tmp/workspace/CzarLeMajeste/hardware-scanner/src-tauri
+cargo tauri dev
+```
+
+Click **Run Live Scan** in the app window to execute `run_live_hardware_scan` and render detected hardware plus ranked OS matches.
 
 ## Output structure
 
